@@ -9,10 +9,12 @@ abstract class ItemState extends Equatable {
 
 class ItemInitial extends ItemState {}
 
-class ItemLoaded extends ItemState {
-  final List<Item_list> items;
+class ItemLoaded extends ItemState {}
 
-  const ItemLoaded({required this.items});
+class ItemSuccess extends ItemState {
+  final List<dynamic> items;
+
+  const ItemSuccess({required this.items});
   @override
   List<Object> get probs => [items];
 }

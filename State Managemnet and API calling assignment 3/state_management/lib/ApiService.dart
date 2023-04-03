@@ -5,7 +5,7 @@ class ApiServiceProvider {
   
 
 
-  Future<Item_list?> fetchActivity() async {
+  Future<List?> fetchActivity() async {
       final response = await http.get(
         Uri.parse('https://fakestoreapi.com/products'),
         headers: <String, String>{
@@ -14,7 +14,7 @@ class ApiServiceProvider {
         },
       );
       if (response.statusCode == 200) {
-        return Item_list.fromJson(json.decode(response.body));
+        return Item_list.returnItemlist(json.decode(response.body));
       } else {
         throw Exception('Failed to load');
       }

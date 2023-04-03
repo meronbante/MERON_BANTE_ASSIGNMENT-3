@@ -7,21 +7,27 @@ abstract class ItemEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadItemCounter extends ItemEvent {}
+class LoadItemCounter extends ItemEvent {
+  const LoadItemCounter();
+
+  @override
+  List<Object> get props => [];
+}
 
 class AddItem extends ItemEvent {
-  final Item_list items;
+  final int currentid;
 
-  const AddItem( this.items);
+
+  const AddItem( {required this.currentid} );
   @override
-  List<Object> get props => [items];
+  List<Object> get props => [];
 }
 
 class RemoveItem extends ItemEvent {
-  final Item_list items;
+ final int currentid;
 
-  const RemoveItem( this.items);
+  const RemoveItem( {required this.currentid} );
   @override
-  List<Object> get props => [items];
+  List<Object> get props => [];
 
 }
